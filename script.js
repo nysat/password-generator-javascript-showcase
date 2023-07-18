@@ -14,17 +14,22 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
+   var correctPrompts = addPrompts();
+
+   if (correctPrompts){
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+   }
 }
 //Generates passwords based on prompts
 function generatePassword() {
 
 }
 function addPrompts() {
+  choice = [];
+
   characterLength = parseInt(prompt("How many charcaters would you like your password to be? (8 - 128 charcters available"));
 
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
