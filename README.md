@@ -1,7 +1,7 @@
 # password-generator-javashowcase
 This repository was used to create a password generator using concepts learned from Javascript to showcase our abilities and understanding of the language. 
 
-
+The following image shows the web application's appearance and functionality:
 
 ![Alt text](./assets/password-gen-webpage.png)
 
