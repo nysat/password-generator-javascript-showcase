@@ -27,7 +27,7 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: #836ff6;
+  color:  #798beb;
 }
 
 .card {
@@ -116,7 +116,7 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-  
+
 }
 
 @media (max-width: 690px) {
