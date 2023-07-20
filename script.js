@@ -14,23 +14,29 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-   var correctPrompts = addPrompts();
-
-   if (correctPrompts){
-  var password = generatePassword();
+  var correctPrompts = addPrompts();  //returns true or false
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-   }
+  if (correctPrompts) {
+    var givenPassword = generatePassword();
+    passwordText.value = givenPassword
+  } else {
+    passwordText.value = "";
+  }
 }
 //Generates passwords based on prompts
 function generatePassword() {
-
+  var password = "";
+  for (var i = 0; i < characterLength; i++) {
+    var randomLetter = Math.floor(Math.random() * choice.length)
+    password = password + choice[randomLetter];
+  }
+  return password;
 }
 function addPrompts() {
   choice = [];
 
-  characterLength = parseInt(prompt("How many charcaters would you like your password to be? (8 - 128 charcters available"));
+  characterLength = parseInt(prompt("How many characters would you like your password to be? (8 - 128 characters available"));
 
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert('Please enter a number between 8 - 128')
@@ -45,8 +51,8 @@ function addPrompts() {
   if (confirm('Special characters?')) {
     choice = choice.concat(specialCharacters);
   }
-  if (confirm ('Numbers?')) {
-    choice = choice .concat(numberOption);
-}
-return true;
+  if (confirm('Numbers?')) {
+    choice = choice.concat(numberOption);
+  }
+  return true;
 }
